@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/allexcd/simple-search.svg?branch=master)](https://travis-ci.org/allexcd/simple-search)
+
 ### Run it
 
 1. npm run polyserve, 
