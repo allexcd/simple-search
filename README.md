@@ -6,4 +6,4 @@
 
 ### See documentation using hydrolisis
 
-http://localhost:8080/components/simple-search/index.html
+http://localhost:8080/components/simple-search/index.htmltravi
