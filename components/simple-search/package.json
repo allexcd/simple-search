@@ -1,0 +1,22 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower": "bower",
+    "polyserve": "polyserve",
+    "vulcanize": "vulcanize",
+    "start:vulcanize": "npm run vulcanize simple-search.html > simple-search.vulcanized.html --exclude=components/paper-input/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "polyserve": "^0.15.0"
+  }
+}

@@ -1,0 +1,95 @@
+<link rel="import" href="../paper-input/paper-input.html"/>
+<link rel="import" href="../paper-progress/paper-progress.html"/>
+<link rel="import" href="../iron-icons/iron-icons.html"/>
+<link rel="import" href="wrapped-input-styles.html"/>
+
+<!--
+
+    ### General Info `<wrapped-input><input type="text" /></wrapped-input>`
+
+    `<wrapped-input>` wraps an input field using transclusion
+
+    Usage: etc
+
+-->
+
+<dom-module id="wrapped-input">
+    <template>
+        <style include="wrapped-input-styles"></style>
+        <div class="input">
+            <content>{{input}}</content>
+            <div>
+                <paper-icon-button icon="icons:info-outline" on-tap="toggle"></paper-icon-button>
+            </div>
+        </div>
+        <div class$="popover {{toggleClass}}">
+            <div>{{inputValue}}</div>
+            <div>
+                <paper-icon-button icon="icons:arrow-forward"></paper-icon-button>
+                <span>18%</span>
+                <paper-progress value="800" min="100" max="1000" class="red"></paper-progress>
+                <span>#5 of 6</span>
+            </div>
+            <div>
+                <paper-icon-button icon="icons:exit-to-app"></paper-icon-button>
+                <span>1.4s</span>
+                <paper-progress value="400" min="100" max="1000" class="green"></paper-progress>
+                <span>#2 of 6</span>
+            </div>
+            <div>
+                <paper-icon-button icon="icons:hourglass-empty"></paper-icon-button>
+                <span>8.6s</span>
+                <paper-progress value="600" min="100" max="1000" class="blue"></paper-progress>
+                <span>#3 of 6</span>
+            </div>
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "wrapped-input",
+        properties: {
+            /** If the popover is visible or not. */
+            isOpen: {
+                type: Boolean,
+                value: false,
+                observer: "_isOpenedChanged"
+            },
+            toggleClass: {
+                type: String,
+                value: ""
+            },
+            inputValue: {
+                type: String,
+                value: ""
+            }
+        },
+        toggle: function () {
+            this.set("isOpen", !this.isOpen);
+        },
+        _isOpenedChanged: function() {
+            this.toggleClass = "";
+            if(this.isOpen) {
+                this.toggleClass = "open";
+            }
+        },
+        _wrapMeUp: function() {
+            this.input = this.firstChild;
+        },
+        ready: function() {
+            this._wrapMeUp();
+        }
+    })
+</script>
+
+
+<script>
+    Polymer({
+        is: "extended-input",
+        extends: 'input',
+        created: function () {
+            this.style.border = "thin solid red";
+        }
+    })
+</script>
