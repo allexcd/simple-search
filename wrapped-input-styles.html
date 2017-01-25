@@ -1,0 +1,43 @@
+<dom-module is="wrapped-input-styles">
+    <template>
+        <style>
+            .input * {
+                display: inline-block;
+            }
+
+            .popover {
+                display: none;
+            }
+
+            .popover.open {
+                display: table;
+                border: thin solid lightgray;
+                border-radius: 5px;
+            }
+
+            .popover > div {
+                display: table-row;
+            }
+
+            .popover > div > * {
+                display: table-cell;
+                padding: 0.5em;
+            }
+
+            paper-progress.blue {
+                --paper-progress-active-color: var(--paper-light-blue-500);
+                --paper-progress-secondary-color: var(--paper-light-blue-100);
+            }
+
+            paper-progress.red {
+                --paper-progress-active-color: var(--paper-red-500);
+                --paper-progress-secondary-color: var(--paper-red-100);
+            }
+
+            paper-progress.green {
+                --paper-progress-active-color: var(--paper-light-green-500);
+                --paper-progress-secondary-color: var(--paper-light-green-100);
+            }
+        </style>
+    </template>
+</dom-module>
