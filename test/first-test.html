@@ -23,22 +23,22 @@
         test("search area appearing in static open", function () {
             assert.equal(element.isOpen, true);
         });
-        test("search event triggered", function (done) {
+        /*test("search event triggered", function (done) {
             element.addEventListener("search", function (e) {
                 assert.equal(e.detail, "abc");
                 done();
             });
             element.querySelector("#searchInput").value = "abc";
             element.querySelector(".trigger-search paper-icon-button").click();
-        });
-        /*test("search event triggered using Shadow DOM", function (done) {
+        });*/
+        test("search event triggered using Shadow DOM", function (done) {
             element.addEventListener("search", function (e) {
                 assert.equal(e.detail, "abc");
                 done();
             });
             Polymer.dom(element.root).querySelector("#searchInput").value = "abc";
             Polymer.dom(element.root).querySelector(".trigger-search paper-icon-button").click();
-        });*/
+        });
     });
 </script>
 </body>
